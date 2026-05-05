@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq_finance
+    ports:
+      - "5672:5672"   # Porta do protocolo AMQP (usada pela aplicação)
+      - "15672:15672" # Porta da interface de gerenciamento web
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
